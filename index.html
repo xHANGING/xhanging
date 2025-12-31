@@ -1,0 +1,152 @@
+index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>LIFE OS 2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#0b0e14;
+  color:#e5e7eb;
+}
+header{
+  padding:30px;
+  text-align:center;
+  border-bottom:1px solid #1f2937;
+}
+h1{color:#2eff7b;margin:0}
+section{
+  margin:18px;
+  padding:20px;
+  background:#121826;
+  border-radius:12px;
+}
+.focus{border-left:4px solid #5da9ff}
+.power{border-left:4px solid #2eff7b}
+label{display:block;margin:8px 0}
+input{margin-right:8px}
+footer{
+  text-align:center;
+  padding:20px;
+  color:#9ca3af;
+}
+button{
+  padding:10px 16px;
+  background:#2eff7b;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+}
+@media(max-width:768px){
+  body{font-size:15px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>LIFE OS 2026</h1>
+  <p>No motivation. Only system.</p>
+</header>
+
+<section>
+  <h2>🌅 Morning Setup</h2>
+  <ul>
+    <li>Wake up, wash, water</li>
+    <li>Bed banana</li>
+    <li>Phone ❌</li>
+  </ul>
+</section>
+
+<section class="focus">
+  <h2>🧠 Airdrop Content – Draft</h2>
+  <p>Think + Write + Plan</p>
+  <ul>
+    <li>Education tweets</li>
+    <li>Opinion takes</li>
+    <li>Insights</li>
+  </ul>
+  <strong>Minimum: 3 drafts</strong>
+</section>
+
+<section class="focus">
+  <h2>🚀 Post + Engage</h2>
+  <ul>
+    <li>1–2 tweets post</li>
+    <li>Quality replies</li>
+    <li>No spam</li>
+  </ul>
+</section>
+
+<section>
+  <h2>📈 Forex Trading (Learning Only)</h2>
+  <ul>
+    <li>Market structure</li>
+    <li>Support & Resistance</li>
+    <li>Backtesting</li>
+    <li>No real trade ❌</li>
+  </ul>
+</section>
+
+<section class="power">
+  <h2>🔥 Night Power Block</h2>
+  <ul>
+    <li>Threads</li>
+    <li>Deep insights</li>
+    <li>Authority content</li>
+  </ul>
+</section>
+
+<section>
+  <h2>✅ Daily Execution</h2>
+
+  <label><input type="checkbox" class="task"> Morning done</label>
+  <label><input type="checkbox" class="task"> Content drafted</label>
+  <label><input type="checkbox" class="task"> Tweets posted</label>
+  <label><input type="checkbox" class="task"> Night block done</label>
+
+  <p>🔥 Streak: <strong><span id="streak">0</span></strong> days</p>
+</section>
+
+<section>
+  <h2>📵 Discipline Laws</h2>
+  <ul>
+    <li>Content = kaam</li>
+    <li>Scroll = fail</li>
+    <li>Copy = disqualify</li>
+  </ul>
+</section>
+
+<footer>
+  <p>Airdrop creators earn. Testnet grinders don’t.</p>
+  <strong>Visibility &gt; Wallet count</strong>
+</footer>
+
+<script>
+const tasks=document.querySelectorAll(".task");
+const streakEl=document.getElementById("streak");
+let streak=Number(localStorage.getItem("streak"))||0;
+streakEl.innerText=streak;
+
+tasks.forEach(t=>t.addEventListener("change",()=>{
+  if([...tasks].every(x=>x.checked)){
+    streak++;
+    localStorage.setItem("streak",streak);
+    streakEl.innerText=streak;
+  }
+}));
+
+const today=new Date().toDateString();
+if(localStorage.getItem("lastReset")!==today){
+  tasks.forEach(t=>t.checked=false);
+  localStorage.setItem("lastReset",today);
+}
+</script>
+
+</body>
+</html>
