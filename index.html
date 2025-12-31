@@ -1,151 +1,298 @@
-index.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>LIFE OS 2026</title>
+<title>LIFE OS 2026 | Rahul</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <style>
-body{
-  margin:0;
-  font-family:Arial,Helvetica,sans-serif;
-  background:#0b0e14;
-  color:#e5e7eb;
-}
-header{
-  padding:30px;
-  text-align:center;
-  border-bottom:1px solid #1f2937;
-}
-h1{color:#2eff7b;margin:0}
-section{
-  margin:18px;
-  padding:20px;
-  background:#121826;
-  border-radius:12px;
-}
-.focus{border-left:4px solid #5da9ff}
-.power{border-left:4px solid #2eff7b}
-label{display:block;margin:8px 0}
-input{margin-right:8px}
-footer{
-  text-align:center;
-  padding:20px;
-  color:#9ca3af;
-}
-button{
-  padding:10px 16px;
-  background:#2eff7b;
-  border:none;
-  border-radius:6px;
-  cursor:pointer;
-}
-@media(max-width:768px){
-  body{font-size:15px}
-}
+  :root {
+    --bg-color: #050505;
+    --card-bg: #111111;
+    --accent: #00ff88; /* Cyberpunk Green */
+    --text-main: #e0e0e0;
+    --text-muted: #666;
+    --border: #333;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace; /* Hacker aesthetic */
+    background: var(--bg-color);
+    color: var(--text-main);
+    padding-bottom: 50px;
+  }
+
+  /* Progress Bar */
+  #progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #000;
+    z-index: 100;
+  }
+  #progress-bar {
+    height: 100%;
+    background: var(--accent);
+    width: 0%;
+    transition: width 0.3s ease;
+    box-shadow: 0 0 10px var(--accent);
+  }
+
+  header {
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+
+  h1 {
+    color: var(--accent);
+    margin: 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  p.subtitle {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-top: 5px;
+  }
+
+  section {
+    margin: 20px auto;
+    padding: 20px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    max-width: 600px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  }
+
+  h2 {
+    font-size: 1.2rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 10px;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  ul {
+    padding-left: 20px;
+    color: #ccc;
+  }
+  li { margin-bottom: 5px; }
+
+  /* Custom Checkboxes */
+  .checkbox-wrapper {
+    display: block;
+    margin: 12px 0;
+    cursor: pointer;
+    font-size: 1.1rem;
+    user-select: none;
+    transition: color 0.2s;
+  }
+  
+  .checkbox-wrapper:hover { color: var(--accent); }
+
+  input[type="checkbox"] {
+    accent-color: var(--accent);
+    transform: scale(1.2);
+    margin-right: 10px;
+  }
+
+  input[type="checkbox"]:checked + span {
+    text-decoration: line-through;
+    color: var(--text-muted);
+  }
+
+  /* Streak Box */
+  .streak-box {
+    text-align: center;
+    background: rgba(0, 255, 136, 0.1);
+    border: 1px solid var(--accent);
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+  }
+  .streak-count {
+    font-size: 2rem;
+    color: var(--accent);
+    font-weight: bold;
+    display: block;
+  }
+
+  footer {
+    text-align: center;
+    padding: 30px;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    opacity: 0.7;
+  }
+
+  /* Responsive */
+  @media(max-width: 600px) {
+    section { margin: 15px; }
+  }
 </style>
 </head>
-
 <body>
+
+<div id="progress-container"><div id="progress-bar"></div></div>
 
 <header>
   <h1>LIFE OS 2026</h1>
-  <p>No motivation. Only system.</p>
+  <p class="subtitle">System > Motivation. Execute Daily.</p>
 </header>
 
 <section>
   <h2>🌅 Morning Setup</h2>
   <ul>
-    <li>Wake up, wash, water</li>
-    <li>Bed banana</li>
-    <li>Phone ❌</li>
+    <li>Wake up & Wash</li>
+    <li>Drink Water</li>
+    <li>Bed Banana 🍌</li>
+    <li><strong>NO PHONE ❌</strong></li>
   </ul>
 </section>
 
-<section class="focus">
-  <h2>🧠 Airdrop Content – Draft</h2>
-  <p>Think + Write + Plan</p>
+<section style="border-left: 4px solid #3498db;">
+  <h2>🧠 Airdrop Grind</h2>
+  <p style="color:#aaa; font-size:0.9rem;"><em>Minimum: 3 Drafts</em></p>
   <ul>
-    <li>Education tweets</li>
-    <li>Opinion takes</li>
-    <li>Insights</li>
+    <li>Write Educational Tweets</li>
+    <li>Share Opinion/Takes</li>
+    <li>Post Insights</li>
   </ul>
-  <strong>Minimum: 3 drafts</strong>
 </section>
 
-<section class="focus">
+<section style="border-left: 4px solid var(--accent);">
   <h2>🚀 Post + Engage</h2>
   <ul>
-    <li>1–2 tweets post</li>
-    <li>Quality replies</li>
-    <li>No spam</li>
+    <li>Post 1-2 Tweets</li>
+    <li>Reply to Big Accounts</li>
+    <li>No Spamming</li>
   </ul>
 </section>
 
 <section>
-  <h2>📈 Forex Trading (Learning Only)</h2>
+  <h2>📈 Forex (Learning)</h2>
   <ul>
-    <li>Market structure</li>
-    <li>Support & Resistance</li>
-    <li>Backtesting</li>
-    <li>No real trade ❌</li>
+    <li>Study Market Structure</li>
+    <li>Mark Support & Resistance</li>
+    <li>Backtest Strategy</li>
+    <li><strong>No Real Trade ❌</strong></li>
   </ul>
 </section>
 
-<section class="power">
+<section style="border-left: 4px solid #f1c40f;">
   <h2>🔥 Night Power Block</h2>
   <ul>
-    <li>Threads</li>
-    <li>Deep insights</li>
-    <li>Authority content</li>
+    <li>Write Threads</li>
+    <li>Deep Research</li>
+    <li>Plan Tomorrow</li>
   </ul>
 </section>
 
 <section>
-  <h2>✅ Daily Execution</h2>
+  <h2>✅ Daily Execution Tracker</h2>
+  
+  <label class="checkbox-wrapper">
+    <input type="checkbox" class="task"> <span>Morning Routine Done</span>
+  </label>
+  <label class="checkbox-wrapper">
+    <input type="checkbox" class="task"> <span>Content Drafted</span>
+  </label>
+  <label class="checkbox-wrapper">
+    <input type="checkbox" class="task"> <span>Tweets Posted</span>
+  </label>
+  <label class="checkbox-wrapper">
+    <input type="checkbox" class="task"> <span>Forex Learning Done</span>
+  </label>
+  <label class="checkbox-wrapper">
+    <input type="checkbox" class="task"> <span>Night Block Done</span>
+  </label>
 
-  <label><input type="checkbox" class="task"> Morning done</label>
-  <label><input type="checkbox" class="task"> Content drafted</label>
-  <label><input type="checkbox" class="task"> Tweets posted</label>
-  <label><input type="checkbox" class="task"> Night block done</label>
-
-  <p>🔥 Streak: <strong><span id="streak">0</span></strong> days</p>
-</section>
-
-<section>
-  <h2>📵 Discipline Laws</h2>
-  <ul>
-    <li>Content = kaam</li>
-    <li>Scroll = fail</li>
-    <li>Copy = disqualify</li>
-  </ul>
+  <div class="streak-box">
+    🔥 Current Streak
+    <span class="streak-count" id="streak">0</span>
+    <span style="font-size:0.8rem">DAYS</span>
+  </div>
 </section>
 
 <footer>
-  <p>Airdrop creators earn. Testnet grinders don’t.</p>
-  <strong>Visibility &gt; Wallet count</strong>
+  <p>"Airdrop creators earn. Testnet grinders don’t."</p>
+  <strong>Visibility > Wallet Count</strong>
 </footer>
 
 <script>
-const tasks=document.querySelectorAll(".task");
-const streakEl=document.getElementById("streak");
-let streak=Number(localStorage.getItem("streak"))||0;
-streakEl.innerText=streak;
+  // DOM Elements
+  const tasks = document.querySelectorAll(".task");
+  const streakEl = document.getElementById("streak");
+  const progressBar = document.getElementById("progress-bar");
 
-tasks.forEach(t=>t.addEventListener("change",()=>{
-  if([...tasks].every(x=>x.checked)){
-    streak++;
-    localStorage.setItem("streak",streak);
-    streakEl.innerText=streak;
+  // Load Data
+  let streak = Number(localStorage.getItem("streak")) || 0;
+  let lastCompletedDate = localStorage.getItem("lastCompletedDate");
+  const today = new Date().toDateString();
+
+  // Reset Logic (New Day)
+  let savedDate = localStorage.getItem("lastReset");
+  if (savedDate !== today) {
+    // New day detected
+    tasks.forEach(t => t.checked = false); // Uncheck visuals
+    localStorage.setItem("taskStates", JSON.stringify(new Array(tasks.length).fill(false))); // Reset memory
+    localStorage.setItem("lastReset", today);
+  } else {
+    // Same day, restore checkboxes
+    const savedStates = JSON.parse(localStorage.getItem("taskStates")) || [];
+    tasks.forEach((t, index) => {
+      if (savedStates[index]) t.checked = true;
+    });
   }
-}));
 
-const today=new Date().toDateString();
-if(localStorage.getItem("lastReset")!==today){
-  tasks.forEach(t=>t.checked=false);
-  localStorage.setItem("lastReset",today);
-}
+  // Render Initial Streak
+  streakEl.innerText = streak;
+  updateProgress();
+
+  // Event Listeners
+  tasks.forEach((task, index) => {
+    task.addEventListener("change", () => {
+      saveState();
+      updateProgress();
+      checkCompletion();
+    });
+  });
+
+  function saveState() {
+    const states = [...tasks].map(t => t.checked);
+    localStorage.setItem("taskStates", JSON.stringify(states));
+  }
+
+  function updateProgress() {
+    const total = tasks.length;
+    const completed = [...tasks].filter(t => t.checked).length;
+    const percent = (completed / total) * 100;
+    progressBar.style.width = percent + "%";
+  }
+
+  function checkCompletion() {
+    const allDone = [...tasks].every(t => t.checked);
+    
+    if (allDone) {
+      // Check if already credited for today
+      if (lastCompletedDate !== today) {
+        streak++;
+        localStorage.setItem("streak", streak);
+        localStorage.setItem("lastCompletedDate", today);
+        streakEl.innerText = streak;
+        
+        // Celebration Effect (Simple alert for now)
+        alert("🔥 DAY COMPLETE! Streak Updated.");
+      }
+    }
+  }
 </script>
 
 </body>
